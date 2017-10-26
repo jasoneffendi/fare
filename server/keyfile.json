@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "strong-pursuit-183907",
+  "private_key_id": "4fc9e5043ab70f0c5f96109385243ecbe9181008",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCya+1im+JDm7bN\nfgq272EATGza+7OIXS8B3AAXphMnZ0HWPXZn0zaXQ75ONcJVZ5CDwfDenLUQDTow\n8JHfBhlaj2pmy6T7WivSStZhkdSX0SIobD8OL1vD+3mhglyeB6swMMMcAwTp1OSG\nhU99Mkou84z4LCKMt3lSd5E8cai2rSNCanVtLjAvRVM0x3j8oRjXWRX5Ah2mi3Le\n0alhJPMfBMm7IiXq3GN2bYV6BeEj450TGjGsf7Q5NhIflCKDNJIaYn+w3U8PaA/Q\nH8AIHABk5++kx1Ms/jpwFlCGw/ekSaIli78S98cwCTdG/bZvf72GpXNdqeAVRQ/J\nzZQpT4QXAgMBAAECggEADJReHk+4pOT7qdgIerFnThVqr13ZC0pBSt5EsLt9f4+2\nLUa+wb87NXBfSzWwcpkPWrAigsTbDJCs2Pp9LmjzAgGOkkTVaFYJNOsghlc5J/hk\nx3jU+/O21/CJDiwaH5eRfZ+n100XMZgDAhZaw7b3Uqwf9Pds+tg3bkBj4GEbG2tR\n40c5XfJlWeNmnbamqsA5Oy+0flnfr2Vk2jIvm2eSxRP0wiq+xzAgMTNLJAhqnbWh\nzwzM6fbhTMi0H3SiiG0t6VZQRcTBwozL3RUREfqOad4fsXoheGBQtJt1M3Wz91Pe\nNm1yaSMyOU8HuWOWlnpWWEEILNpqXDv9phL3KJC9QQKBgQD0OW5ekeG6/1o8+6n8\n/vCSSeOCxeHE0wr1OL4xvYb5x9sdgbIwk+4YmusixB05iObIyRLKCRBggkR2tkl9\n9GavQ+xbYxqhzOHeoymiY7bznecEcOPFGy6GNTaUAnelIPOuxjKE+8u4sBKU2lfV\nVttEw5Lh97kL132V6gobzP/2BwKBgQC7BkOGFBToob+yUx8WotpM90O61BIpZ42z\nMOVh+w1JtoboM2hMGtLYw5qFw0Rd1pZ4gOsTyhSw6+i6r9VWFb7fHZY5NGcQ4FsQ\nwMM/RPlcde/z55cCUIC2gXxRDrghxmIEYiM3uzAB1wZZRNUoc7YLXPr6tSvuuZrA\n7zSb9Jn9cQKBgGC20ZdPzAWCk9isjL+ssdYsvpUOCf8o2CEOLHuEI4yM8Z+4ubj1\nDAfgaZdl9HDRXxtKTU+G0V52l+gu/eGMRJHJozL5hxVmDlhdYuJ0/IFzGYYvsnNe\n9UiekBOC+qCA8R9YS69QC3gC+gjKgpfwgnqzvFoSAMzItGoGuaQSxZZHAoGAA6t9\ny7W9K0txPYiQBZuweO4pMBNVP+a+SxPcjG2mtxmT0B6iH0wvcv1znMhWIRlC3p54\n/mxqt4YJjRBCOWw30Jz+A6VZmGUupEeEDUvHMN9HlBupROxbejlUPSryxgbkiX17\nf2525LJZd4r4O9D5c4OhkSXY9NhDhyGqgJzuIKECgYEAjHgYihVZHn3Vu3jgDiBD\nzhPVTU9ccVFk2LoV9WiHZt8n8DxVnQaUHQdDCaU5ed8RQaDekH+Sir7JxVzvhKFO\nphc1tooWnuC2B0fvAJWQPi316DsIElUaRfEKV2zu8OjLCPDgL24/+1ybc+A7I2IC\n7QQJHoktBbaKBC1BB+Z9lC0=\n-----END PRIVATE KEY-----\n",
+  "client_email": "jason-admin@strong-pursuit-183907.iam.gserviceaccount.com",
+  "client_id": "113647997642564849622",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/jason-admin%40strong-pursuit-183907.iam.gserviceaccount.com"
+}
