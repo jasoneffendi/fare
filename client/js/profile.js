@@ -6,6 +6,10 @@ Vue.component('profile-section', {
       <a href="#" class="brand-logo center">
           <img src="/css/fare.png" alt="">
       </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="index.html">Log Out</a></li>
+    </ul>
     </div>
   </nav>
 
@@ -108,7 +112,7 @@ Vue.component('profile-section', {
               params: {token: retrievedObject}
           })
           .then(response => {
-            //   window.location.href="index.html"
+              window.location.href="index.html"
             console.log(response)
           })
           .catch(err => {

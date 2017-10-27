@@ -1,19 +1,22 @@
 Vue.component('post-item', {
-    props: ['list'],
+    props: ['item'],
     template: `
     <section>
     <div class="row">
     <div class="col s8 offset-s2">
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" v-bind:src="list.photo">
+          <img class="activator" v-bind:src="item.photo">
         </div>
         <div class="card-content">
-        <p>posted by: {{ list.member.name }}</p>
+        <p>posted by: {{ item.member.name }}</p>
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-          <hello><p>{{ list.description }}</p></hello>
+          <hello>
+              <p>{{ item.description }}</p>
+              <p>{{ item.labels }}</p>
+          </hello>
         </div>
         
         <!-- Modal Structure -->
@@ -69,11 +72,13 @@ Vue.component('main-item', {
     <div>
     <nav>
     <div class="nav-wrapper">
-    <a href="profilepage.html" class="brand-logo right">Profile</a>
       <a href="upload.html" class="brand-logo center">
           <img src="/css/fare.png" alt="">
       </a>
-      <input type
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="index.html">Log Out</a></li>
+    </ul>
     </div>
     </nav> 
     <div class="container">
@@ -86,7 +91,7 @@ Vue.component('main-item', {
     <div class="row">
         <post-item
         v-for="item in posts"
-        v-bind:list="item"
+        v-bind:item="item"
         v-bind:key="item.id">
         </post-item>
     </div>

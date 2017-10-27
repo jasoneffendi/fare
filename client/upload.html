@@ -35,9 +35,11 @@
           axios.post('http://localhost:3000/upload', data, config)
             .then(function (res) {
                 console.log('masuk sini')
+                console.log(res.data.label)
                 var output = document.getElementById('result')
-                output.src = res.data
-                document.getElementById('chosenImage').value = res.data;
+                output.src = res.data.url
+                document.getElementById('chosenImage').value = res.data.url;
+                document.getElementById('labels').value = res.data.label;
             })
             .catch(function (err) {
               alert(err.message);
