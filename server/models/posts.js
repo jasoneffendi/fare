@@ -29,10 +29,12 @@ function post(req,res) {
     if(req.body.image !== '' && req.body.description !== '') {
         var newPost = new Post({
             member: opentoken._id,
-            photo: req.body.image,
+            photo: req.body.photo,
             description: req.body.description
         })
 
+
+        console.log(newPost)
         newPost.save()
         .then((result,err) => {
             if(err) return res.send(err)
@@ -55,48 +57,15 @@ function profile(req,res) {
     })
 }
 
-function edit(req,res) {
-    var opentoken = jwt.verify(req.body.token, 'fare')
-    console.log(opentoken)
-    User.findOne({name: req.body.name})
-    .then(user => {
-        if(req.body.user !== '' && req.body.password !== '' && req.body.email !== '' && user == null) {
-            User.findOneAndUpdate({_id: opentoken._id}, {
-                name: req.body.name,
-                password: req.body.password,
-                email: req.body.email
-            })
-            .then((result,err) => {
-                if(err) return res.send(err)
-
-                res.send(result)
-            })
-        } else {
-            res.send(false)
-        }
-    })
-    .catch(err => {
-        res.send(err)
-    })
-}
-
-
 function del(req,res) {
-    var opentoken = jwt.verify(req.body.token, 'fare')
-    console.log(opentoken)
-    User.findOneAndRemove({_id: opentoken._id})
-    .then(response => {
-        res.send({
-            message: 'delete user berhasil'
-        })
-    })
-    .catch(err => {
-        res.send(err)
+    Post.findOneAndRemove({_id: req.body.id})
+    .then(post => {
+        res.send(post)
     })
 }
+
 module.exports = {
     get,
     post,
-    edit,
     del
 }

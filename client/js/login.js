@@ -1,11 +1,17 @@
-var app = new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello Lively Fox!',
-    data: [],
-    output: ''
-  },
-  methods : {
+Vue.component('login-section', {
+  template: `
+  <div>
+  <img class="logo" src="/css/fare.png"></img>
+  <form name="login">
+
+      <input type="text" class="form-control" placeholder="Username" name="name" ref="name"/>
+
+      <input type="password" class="form-control" id="pass" placeholder="Password" name="password" ref="password"/>
+      
+      <input class="btn btn-primary" type="button" @click.prevent="getFormValues()" value="Log in" />
+  </form>
+  </div>`,
+  methods: {
     getFormValues: function getFormValues () {
       axios.post("http://localhost:3000/users/login", {
           name: this.$refs.name.value,
@@ -28,4 +34,8 @@ var app = new Vue({
   mounted: function () {
       localStorage.removeItem('token')
   }
+})
+
+var app = new Vue({
+  el: '#app'
 })

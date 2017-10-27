@@ -8,6 +8,10 @@ class postCtrl{
     static post(req,res) {
         Post.post(req,res)
     }
+
+    static delete(req,res) {
+        Post.del(req,res)
+    }
 }
 
 module.exports = postCtrl
