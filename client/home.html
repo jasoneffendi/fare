@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css"  media="screen,projection"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/vue"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="materialize/css/master.css">
+  <title>Profile</title>
+</head>
+<body>
+  <div id="app">
+    <main-item></main-item>
+  </div>
+<script src="./js/home.js"></script>
+<script>
+  document.getElementById('search').onkeypress = function(e){
+    if (!e) e = window.event;
+    var keyCode = e.keyCode || e.which;
+    if (keyCode == '13'){
+      // Enter pressed
+      lookup()
+      return false;
+    }
+  }
+function lookup() {
+    console.log('halo')
+    var search = document.getElementById("search").value.toUpperCase()
+    console.log(search)
+    var titles = document.getElementsByTagName('hello')
+    console.log(titles)
+    var content = document.getElementsByTagName('section')
+    console.log(content)
+    for (i = 0; i < titles.length; i++) {
+        if (titles[i].innerHTML.toUpperCase().indexOf(search) > -1) {
+            content[i].style.display = "";
+        } else {
+            content[i].style.display = "none";
+        }
+    }
+    return false
+  }
+</script>
+</body>
+</html>
+
