@@ -7,7 +7,8 @@ var PostSchema = new Schema({
     member: {type: Schema.Types.ObjectId, ref: 'User'},
     created_date: {type: Date, default: Date.now },
     photo: String,
-    description: String
+    description: String,
+    labels: String
 })
 
 var Post = mongoose.model('Post', PostSchema)
@@ -18,6 +19,22 @@ function get(req,res) {
     .then(response => {
         console.log(response)
         res.send(response)
+    })
+    .catch(err => {
+        res.send(err)
+    })
+}
+
+function ownPosts(req,res) {
+    console.log(req.body)
+    var opentoken = jwt.verify(req.body.token, 'fare')
+    console.log(opentoken)
+    Post.find({member: opentoken._id})
+    .then(posts => {
+        res.send(posts)
+    })
+    .catch(err => {
+        res.send(err)
     })
 }
 
@@ -30,7 +47,8 @@ function post(req,res) {
         var newPost = new Post({
             member: opentoken._id,
             photo: req.body.photo,
-            description: req.body.description
+            description: req.body.description,
+            labels: req.body.labels
         })
 
 
@@ -67,5 +85,6 @@ function del(req,res) {
 module.exports = {
     get,
     post,
-    del
+    del,
+    ownPosts
 }

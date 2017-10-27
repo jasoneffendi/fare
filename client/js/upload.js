@@ -5,9 +5,10 @@ Vue.component('upload-section', {
     
         <input type='text' ref="description" id='description' placeholder="Describe your post">
         <input type='text' ref="imageURL" id='chosenImage' placeholder="Image URL"> 
+        <input type='text' ref="labels" id='labels' placeholder="labels"> 
         <button id="post" type="button" class="btn btn-primary" @click.prevent="getFormValues()">Post</button>          
     <div id="output" class="container"></div>
-    <img src='' id='result'>
+    <img src='' id='result' style="max-height: 30%; max-width: 30%;">
     </div>`,
     methods: {
         hasLogin: function() {
@@ -25,7 +26,9 @@ Vue.component('upload-section', {
             axios.post("http://localhost:3000/post", {
                 token: retrievedObject,
                 description: this.$refs.description.value,
-                photo: this.$refs.imageURL.value})
+                photo: this.$refs.imageURL.value,
+                labels: this.$refs.labels.value
+            })
             .then(response => {
                 if(response) {
                     console.log(response)

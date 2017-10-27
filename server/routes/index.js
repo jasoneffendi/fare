@@ -17,15 +17,26 @@ images.sendUploadToGCS,
 
   // Was an image uploaded? If so, we'll use its public URL
   // in cloud storage.
+  var labels = []
+  req.file.labels.forEach(data => {
+    labels.push(data.description)
+  })
+  console.log(labels)
   if (req.file && req.file.cloudStoragePublicUrl) {
     data.imageUrl = req.file.cloudStoragePublicUrl;
+    data.label = labels
   }
-  res.send(req.file.cloudStoragePublicUrl)
+  res.send({
+    url: req.file.cloudStoragePublicUrl,
+    label: labels
+  })
   // Save the data to the database.
 });
 
 router.post('/post', postCtrl.post);
 
 router.delete('/post', postCtrl.delete);
+
+router.post('/profile', postCtrl.profile)
 
 module.exports = router;

@@ -92,7 +92,8 @@ function edit(req,res) {
 
 
 function del(req,res) {
-    var opentoken = jwt.verify(req.body.token, 'fare')
+    console.log(req.query.token)
+    var opentoken = jwt.verify(req.query.token, 'fare')
     console.log(opentoken)
     User.findOneAndRemove({_id: opentoken._id})
     .then(response => {
@@ -105,10 +106,23 @@ function del(req,res) {
     })
 }
 
+function getData(req,res) {
+    var opentoken = jwt.verify(req.body.token, 'fare')
+    console.log(opentoken)
+     User.findOne({_id: opentoken._id})
+    .then(response => {
+        res.send(response)
+    })
+    .catch(err => {
+        res.send(err)
+    })
+}
+
 module.exports = {
     get,
     register,
     login,
     edit,
-    del
+    del,
+    getData
 }
