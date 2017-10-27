@@ -12,4 +12,10 @@ router.post('/', userCtrl.register);
 
 router.post('/login', userCtrl.login);
 
+router.put('/', userCtrl.edit)
+
+router.delete('/', userCtrl.del)
+
+router.post('/one', userCtrl.getData)
+
 module.exports = router;

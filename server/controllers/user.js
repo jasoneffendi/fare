@@ -12,6 +12,18 @@ class userCtrl{
     static login(req,res) {
         User.login(req,res)
     }
+
+    static edit(req,res) {
+        User.edit(req,res)
+    }
+
+    static del(req,res) {
+        User.del(req,res)
+    }
+
+    static getData(req,res) {
+        User.getData(req,res)
+    }
 }
 
 module.exports = userCtrl

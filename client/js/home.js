@@ -3,7 +3,7 @@ Vue.component('post-item', {
     template: `
     <section>
     <div class="row">
-    <div class="col s4 offset-s4">
+    <div class="col s8 offset-s2">
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
           <img class="activator" v-bind:src="list.photo">
@@ -69,7 +69,7 @@ Vue.component('main-item', {
     <div>
     <nav>
     <div class="nav-wrapper">
-    <a href="profile2.html" class="brand-logo right">Profile</a>
+    <a href="profilepage.html" class="brand-logo right">Profile</a>
       <a href="upload.html" class="brand-logo center">
           <img src="/css/fare.png" alt="">
       </a>
