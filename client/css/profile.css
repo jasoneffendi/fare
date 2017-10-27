@@ -6827,6 +6827,7 @@ html {
   }
   .logo{
       width: 100px;
+      text-align: center;
       height: 100px;
   }
   .panel-primary .panel-title,
@@ -6859,8 +6860,7 @@ html {
   }
   
   .navbar-header {
-    float: left;
-    padding-left: 15px;
+   width: 1000px
   }
   
   .navbar-brand {
