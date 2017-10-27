@@ -15,14 +15,8 @@
             </div>
             <button id="upload" type="button" class="btn btn-primary">Upload</button>
           </form>
-      <div id="app">
-    <h1>file upload</h1>
-
-        <input type='text' ref="description" id='description' placeholder="Describe your post">
-        <input type='text' ref="imageURL" id='chosenImage' placeholder="Image URL"> 
-        <button id="post" type="button" class="btn btn-primary" @click.prevent="getFormValues()">Post</button>          
-    <div id="output" class="container"></div>
-    <img src='' id='result'>
+    <div id="app">
+        <upload-section></upload-section>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>

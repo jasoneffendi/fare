@@ -1,8 +1,14 @@
-new Vue({
-    el: '#app',
-    data: {
-        posts: []
-    },
+Vue.component('upload-section', {
+    template: `
+    <div>
+    <h1>file upload</h1>
+    
+        <input type='text' ref="description" id='description' placeholder="Describe your post">
+        <input type='text' ref="imageURL" id='chosenImage' placeholder="Image URL"> 
+        <button id="post" type="button" class="btn btn-primary" @click.prevent="getFormValues()">Post</button>          
+    <div id="output" class="container"></div>
+    <img src='' id='result'>
+    </div>`,
     methods: {
         hasLogin: function() {
             var retrievedObject = localStorage.getItem('token');
@@ -31,23 +37,23 @@ new Vue({
             .catch(err => {
                 console.log(err)
             })
-              console.log(this.$refs.description.value)
+                console.log(this.$refs.description.value)
             // this.output = this.$refs.name.value
-          },
-          uploadPhoto: function uploadPhoto() {
+            },
+            uploadPhoto: function uploadPhoto() {
             console.log('masuk lho')
             console.log(document.getElementById('file').files)
             var output = document.getElementById('output');
             document.getElementById('upload').onclick = function () {
-              var data = new FormData();
-              data.append('foo', 'bar');
-              data.append('image', document.getElementById('file').files[0]);
-              var config = {
+                var data = new FormData();
+                data.append('foo', 'bar');
+                data.append('image', document.getElementById('file').files[0]);
+                var config = {
                 onUploadProgress: function(progressEvent) {
-                  var percentCompleted = Math.round( (progressEvent.loaded * 100) / progressEvent.total );
+                    var percentCompleted = Math.round( (progressEvent.loaded * 100) / progressEvent.total );
                 }
-              };
-              axios.post('http://localhost:3000/upload', data, config)
+                };
+                axios.post('http://localhost:3000/upload', data, config)
                 .then(function (res) {
                     console.log('masuk sini')
                     var output = document.getElementById('result')
@@ -55,12 +61,16 @@ new Vue({
                     document.getElementById('chosenImage').value = res.data;
                 })
                 .catch(function (err) {
-                  alert(err.message);
+                    alert(err.message);
                 });
             };
-          }
-    },
-    mounted: function() {
-        this.hasLogin()
-    }
+            }
+        },
+        mounted: function() {
+            this.hasLogin()
+        }
+})
+
+new Vue({
+    el: '#app'
 })

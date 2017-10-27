@@ -26,4 +26,6 @@ images.sendUploadToGCS,
 
 router.post('/post', postCtrl.post);
 
+router.delete('/post', postCtrl.delete);
+
 module.exports = router;
