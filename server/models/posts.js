@@ -29,10 +29,12 @@ function post(req,res) {
     if(req.body.image !== '' && req.body.description !== '') {
         var newPost = new Post({
             member: opentoken._id,
-            photo: req.body.image,
+            photo: req.body.photo,
             description: req.body.description
         })
 
+
+        console.log(newPost)
         newPost.save()
         .then((result,err) => {
             if(err) return res.send(err)
