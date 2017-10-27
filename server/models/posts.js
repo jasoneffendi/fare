@@ -19,6 +19,22 @@ function get(req,res) {
         console.log(response)
         res.send(response)
     })
+    .catch(err => {
+        res.send(err)
+    })
+}
+
+function ownPosts(req,res) {
+    console.log(req.body)
+    var opentoken = jwt.verify(req.body.token, 'fare')
+    console.log(opentoken)
+    Post.find({member: opentoken._id})
+    .then(posts => {
+        res.send(posts)
+    })
+    .catch(err => {
+        res.send(err)
+    })
 }
 
 function post(req,res) {
@@ -67,5 +83,6 @@ function del(req,res) {
 module.exports = {
     get,
     post,
-    del
+    del,
+    ownPosts
 }

@@ -12,6 +12,10 @@ class postCtrl{
     static delete(req,res) {
         Post.del(req,res)
     }
+
+    static profile(req,res) {
+        Post.ownPosts(req,res)
+    }
 }
 
 module.exports = postCtrl

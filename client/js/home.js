@@ -1,67 +1,95 @@
 Vue.component('post-item', {
     props: ['list'],
-    template: ` 
+    template: `
     <section>
-    <div class="col-lg-2 col-sm-3 col-xs-4" id="content">
-        <div class="thumbnail">
-            <img v-bind:src="list.photo"/>
-            <h4>{{ list.description }}</h4>
-            <p>posted by: {{ list.member.name }}</p>
+    <div class="row">
+    <div class="col s4 offset-s4">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" v-bind:src="list.photo">
         </div>
+        <div class="card-content">
+        <p>posted by: {{ list.member.name }}</p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+          <hello><p>{{ list.description }}</p></hello>
+        </div>
+        
+        <!-- Modal Structure -->
+        <div id="modalEdit" class="modal">
+          <div class="modal-content">
+            <h4>Edit Profile</h4>
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="last_name" type="text" class="validate">
+                  <label for="last_name">Last Name</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="password" type="password" class="validate">
+                  <label for="password">Password</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="email" type="email" class="validate">
+                  <label for="email">Email</label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat green">Agree</a>
+          </div>
+        </div>
+    
+        <!-- Modal Structure -->
+        <div id="modalDelete" class="modal">
+          <div class="modal-content">
+            <h4>Delete Profile</h4>
+            <p>A bunch of text</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
     </section>`
 })
 
+
+
 Vue.component('main-item', {
     template: `  
     <div>
-    <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <img class="logo" src="./css/fare.png" alt="">
-      </div>
-    
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search" id="search">
-          </div>
-          <button type="submit" class="btn btn-default" id="enter">Submit</button>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Link</a></li>
-        </ul>
-      </div>
+    <nav>
+    <div class="nav-wrapper">
+    <a href="profile2.html" class="brand-logo right">Profile</a>
+      <a href="upload.html" class="brand-logo center">
+          <img src="/css/fare.png" alt="">
+      </a>
+      <input type
     </div>
-    </nav>  
+    </nav> 
+    <div class="container">
+        <div class="row">
+            <div class="input-field col s12">
+            <input id="search" type="text" placeholder="Search">
+          </button>
+        </div>
+    </div>
     <div class="row">
-    <post-item
-    v-for="item in posts"
-    v-bind:list="item"
-    v-bind:key="item.id">
-    </post-item>
+        <post-item
+        v-for="item in posts"
+        v-bind:list="item"
+        v-bind:key="item.id">
+        </post-item>
+    </div>
     </div>
     </div>`,
     data() {

@@ -28,4 +28,6 @@ router.post('/post', postCtrl.post);
 
 router.delete('/post', postCtrl.delete);
 
+router.post('/profile', postCtrl.profile)
+
 module.exports = router;
