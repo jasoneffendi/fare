@@ -7,7 +7,8 @@ var PostSchema = new Schema({
     member: {type: Schema.Types.ObjectId, ref: 'User'},
     created_date: {type: Date, default: Date.now },
     photo: String,
-    description: String
+    description: String,
+    labels: String
 })
 
 var Post = mongoose.model('Post', PostSchema)
@@ -46,7 +47,8 @@ function post(req,res) {
         var newPost = new Post({
             member: opentoken._id,
             photo: req.body.photo,
-            description: req.body.description
+            description: req.body.description,
+            labels: req.body.labels
         })
 
 
